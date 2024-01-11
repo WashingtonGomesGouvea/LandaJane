@@ -1,4 +1,4 @@
-/*====  RESET ============================ */
+/*==== RESET ============================ */
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +11,8 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit; /* Garante que os links herdem a cor do texto pai */
+  transition: color 0.3s; /* Suave transição de cor ao passar o mouse */
 }
 
 img {
@@ -18,30 +20,29 @@ img {
   height: auto;
 }
 
-/*===== Variables ====== */
+/*===== VARIABLES ====== */
 :root {
   --header-height: 4.5rem;
 
-  /* colors */
-  --hue: 270;
-  /* HSL color mode */
-  --base-color: hsl(var(--hue) 83% 63%);
-  --base-color-second: hsl(var(--hue) 33% 15%);
-  --base-color-alt: hsl(var(--hue) 86% 50%);
-  --title-color: hsl(var(--hue) 41% 10%);
-  --text-color: hsl(0 0% 46%);
-  --text-color-light: hsl(0 0% 98%);
-  --body-color: hsl(0 0% 98%);
+  /* Cores Atualizadas */
+  --hue: 250; /* Ajuste a tonalidade para uma cor mais moderna */
+  --base-color: hsl(var(--hue), 70%, 55%); /* Cor primária mais vibrante */
+  --base-color-second: hsl(var(--hue), 35%, 85%); /* Cor secundária mais suave */
+  --base-color-alt: hsl(var(--hue), 60%, 50%); /* Cor alternativa */
+  --title-color: hsl(var(--hue), 15%, 20%); /* Cor para títulos */
+  --text-color: hsl(0, 0%, 46%);
+  --text-color-light: hsl(0, 0%, 98%);
+  --body-color: hsl(0, 0%, 98%);
 
-  /* Fontes */
-  --title-font-size: 1.875rem;
-  --subtitle-font-size: 1rem;
+  /* Fontes Modernizadas */
+  --title-font-size: 2rem; /* Tamanho maior para títulos */
+  --subtitle-font-size: 1.125rem; /* Tamanho maior para subtítulos */
 
-  --title-font: 'Poppins', sans-serif;
-  --body-font: 'DM Sans', sans-serif;
+  --title-font: 'Roboto', sans-serif; /* Fonte moderna para títulos */
+  --body-font: 'Open Sans', sans-serif; /* Fonte limpa e legível para o corpo do texto */
 }
 
-/*===  BASE ============================ */
+/*=== BASE ============================ */
 html {
   scroll-behavior: smooth;
 }
@@ -51,28 +52,32 @@ body {
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6; /* Espaçamento de linha para melhor legibilidade */
 }
 
 .title {
   font: 700 var(--title-font-size) var(--title-font);
   color: var(--title-color);
   -webkit-font-smoothing: auto;
+  margin-bottom: 1rem; /* Espaço abaixo dos títulos */
 }
 
 .button {
   background-color: var(--base-color);
   color: var(--text-color-light);
-  height: 3.5rem;
+  height: 3rem; /* Altura ajustada */
   display: inline-flex;
   align-items: center;
-  padding: 0 2rem;
-  border-radius: 0.25rem;
-  font: 500 1rem var(--body-font);
-  transition: background 0.3s;
+  padding: 0 1.5rem; /* Padding horizontal ajustado */
+  border-radius: 0.5rem; /* Bordas mais arredondadas */
+  font: 500 0.875rem var(--body-font); /* Tamanho de fonte ajustado */
+  transition: background 0.3s, transform 0.3s; /* Transição de fundo e transformação */
+  cursor: pointer; /* Cursor de mão para indicar clicável */
 }
 
 .button:hover {
   background: var(--base-color-alt);
+  transform: translateY(-2px); /* Levanta ligeiramente o botão ao passar o mouse */
 }
 
 .divider-1 {
